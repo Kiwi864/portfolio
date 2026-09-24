@@ -28,6 +28,11 @@ import coffeeLinkedin from '../assets/projects/coffee-linkedin.webp'
 import motionSpace from '../assets/projects/motion-space.png'
 import motionStage from '../assets/projects/motion-stage.png'
 
+// Files in public/ aren't fingerprinted by Vite, so prefix the base URL
+// ('/' in dev, '/portfolio/' in the GitHub Pages build) manually.
+const base = import.meta.env.BASE_URL
+
+
 export const designProjects = [
   {
     slug: 'kiwitravels',
@@ -160,7 +165,7 @@ export const designProjects = [
     note: 'Cinematic background scenes for short-form video — an orbital sunrise and a warm product stage, built to loop.',
     tags: ['Motion', 'Compositing', 'Scene design'],
     cover: motionSpace,
-    coverVideo: '/videos/motion-space.mp4',
+    coverVideo: `${base}videos/motion-space.mp4`,
     tint: '#10131f',
     motion: true,
 
@@ -181,8 +186,8 @@ export const designProjects = [
       },
     ],
     gallery: [
-      { src: motionSpace, video: '/videos/motion-space.mp4', label: 'Orbital sunrise' },
-      { src: motionStage, video: '/videos/motion-stage.mp4', label: 'Product stage' },
+      { src: motionSpace, video: `${base}videos/motion-space.mp4`, label: 'Orbital sunrise' },
+      { src: motionStage, video: `${base}videos/motion-stage.mp4`, label: 'Product stage' },
     ],
     results: [
       { value: '2', label: 'scenes' },
