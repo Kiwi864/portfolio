@@ -1,0 +1,132 @@
+/* ============================================================
+   Samuel Tamas — portfolio
+   "Two minds, one maker."
+   Shared foundation. Each world (design / frontend) themes on top.
+   ============================================================ */
+
+:root {
+  /* --- Design world (light, editorial) --- */
+  --d-paper: #f6f3ec;
+  --d-paper-2: #efeade;
+  --d-ink: #171410;
+  --d-muted: #8a8375;
+  --d-line: #d8d1c1;
+  --d-pigment: #e23b2e; /* vermilion */
+
+  /* --- Frontend world (dark, terminal) --- */
+  --f-slate: #0d1014;
+  --f-slate-2: #12161c;
+  --f-foam: #e7ebee;
+  --f-dim: #5b6672;
+  --f-line: #232b34;
+  --f-signal: #7de2d1; /* cool teal */
+
+  /* --- type --- */
+  --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --mono: 'JetBrains Mono', 'SFMono-Regular', ui-monospace, monospace;
+  --sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* --- rhythm --- */
+  --seam: 1px;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --maxw: 1320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--f-slate);
+  color: var(--f-foam);
+  min-height: 100dvh;
+}
+
+#app {
+  min-height: 100dvh;
+  isolation: isolate;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--d-pigment);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Accessible focus — visible on both worlds */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- route transition: a clean cross-world wipe --- */
+.world-enter-active,
+.world-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.world-enter-from {
+  opacity: 0;
+  transform: translateY(14px);
+}
+.world-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
