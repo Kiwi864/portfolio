@@ -9,9 +9,9 @@ import { designProjects as work } from '../data/designProjects'
     <header class="nav">
       <router-link to="/" class="nav__home">Samuel&nbsp;Tamas</router-link>
       <nav class="nav__links">
-        <a href="#work">Work</a>
+        <router-link :to="{ path: '/design', hash: '#work' }">Work</router-link>
         <router-link to="/about">About</router-link>
-        <a href="#contact">Contact</a>
+        <router-link :to="{ path: '/design', hash: '#contact' }">Contact</router-link>
       </nav>
       <router-link to="/frontend" class="nav__toggle">
         The frontend side <span aria-hidden="true">→</span>

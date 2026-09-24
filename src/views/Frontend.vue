@@ -65,10 +65,10 @@ onBeforeUnmount(() => clearInterval(timer))
         <span class="nav__prompt">samuel@tamas</span>:<span class="nav__path">~</span>$
       </router-link>
       <nav class="nav__links">
-        <a href="#work">work</a>
-        <a href="#stack">stack</a>
+        <router-link :to="{ path: '/frontend', hash: '#work' }">work</router-link>
+        <router-link :to="{ path: '/frontend', hash: '#stack' }">stack</router-link>
         <router-link to="/about">about</router-link>
-        <a href="#contact">contact</a>
+        <router-link :to="{ path: '/frontend', hash: '#contact' }">contact</router-link>
       </nav>
       <router-link to="/design" class="nav__toggle">
         <span aria-hidden="true">←</span> the design side
