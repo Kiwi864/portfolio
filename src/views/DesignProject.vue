@@ -405,11 +405,17 @@ const next = computed(() => getAdjacent(route.params.slug).next)
 /* galleries with only a couple of pieces sit side-by-side, not in a lopsided column grid */
 .gallery__grid--few {
   columns: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0.75rem, 2vw, 1.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vw, 1.75rem);
 }
-.gallery__grid--few .shot { margin: 0; }
+.gallery__grid--few .shot {
+  margin: 0;
+  flex: 0 1 340px;
+  max-width: 340px;
+}
 .shot__cap {
   margin-top: 0.6rem;
   font-family: var(--mono);
