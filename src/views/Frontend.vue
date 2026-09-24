@@ -40,7 +40,7 @@ const stack = [
 
 // tiny typed-hero effect (respects reduced motion)
 const typed = ref('')
-const full = 'const maker = { design, code };'
+const full = 'const Samo = { design, code };'
 let timer = null
 onMounted(() => {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
